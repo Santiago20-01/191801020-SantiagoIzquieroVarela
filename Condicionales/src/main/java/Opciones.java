@@ -11,17 +11,14 @@ import java.util.Scanner;
  *
  * @author ramse
  */
-public class Condicionales {
+public class Opciones {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
-        System.out.println("Deme el numero de la serie: ");
-        int serie=scanner.nextInt();
-        for(int i=0;i<=serie;i++)
-           System.out.println(i);
-        int i=serie;
-        while(i>=0){
-            System.out.println(i);
-            i--;
-        }
+        int numero1, numero2;
+        System.out.println("Ingrese el primer valor: ");
+        numero1=scanner.nextInt();
+        System.out.println("Ingrese el segund{o valor: ");
+        numero2=scanner.nextInt();
+        System.out.println("Menu");
     }
 }

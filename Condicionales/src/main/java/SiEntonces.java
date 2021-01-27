@@ -11,17 +11,14 @@ import java.util.Scanner;
  *
  * @author ramse
  */
-public class Condicionales {
+public class SiEntonces {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
-        System.out.println("Deme el numero de la serie: ");
-        int serie=scanner.nextInt();
-        for(int i=0;i<=serie;i++)
-           System.out.println(i);
-        int i=serie;
-        while(i>=0){
-            System.out.println(i);
-            i--;
-        }
+        System.out.println("Ingrse un numero: ");
+        int numero=scanner.nextInt();
+        if(numero<0)
+            System.out.println("El numero es negativo!!!");
+        else
+            System.out.println("El numero es positivo!!!");
     }
 }
