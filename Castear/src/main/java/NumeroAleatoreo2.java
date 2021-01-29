@@ -8,7 +8,7 @@
  *
  * @author ramse
  */
-public class NumeroAleatoreo {
+public class NumeroAleatoreo2 {
     public static void main(String[] args) {
         int max = 10; 
         int min = 1; 
