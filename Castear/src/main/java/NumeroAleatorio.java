@@ -8,7 +8,7 @@
  *
  * @author ramse
  */
-public class NumeroAleatoreo {
+public class NumeroAleatorio {
     public static void main(String[] args) {
         int max = 43; 
         int min = 1; 
