@@ -20,7 +20,6 @@ public class Cine {
         this.horaIn = 0;
         this.horaOut = 0;
         this.nombre = "";
-        this.peliculas = null;
     }
     
     public Cine(String nombre, int horaIn, int horaOut, ArrayList <Pelicula> peliculas){
@@ -34,7 +33,6 @@ public class Cine {
         this.horaIn = horaIn;
         this.horaOut = horaOut;
         this.nombre = nombre;
-        this.peliculas = null;
     }
     
     public String imprimirPeliculas(){
@@ -46,7 +44,33 @@ public class Cine {
     }
     
     public void agregarPelicula(Pelicula pelicula){
-            peliculas.add(pelicula);
+        peliculas.add(pelicula);
+    }
+    
+    public int numPeliculas(){
+        System.out.println("Total de peliculas: ");
+        return peliculas.size();
+    }
+    
+    public String menuPeliculas(){
+        String menu = "";
+        int i = 1;
+        menu += "\tMENU\n";
+        for (Pelicula pelicula:peliculas){
+            menu += i + "- " + pelicula.titulo + "\n";
+            i++;
+        }
+        return menu;
+    }
+  
+    public void horaCine(int horaEn){
+        
+        if(horaIn <= horaEn && horaOut >= horaEn){
+            System.out.println("Si esta abierto");
+        }
+        else{
+            System.out.println("No esta abierto");
+        }
     }
     
     @Override

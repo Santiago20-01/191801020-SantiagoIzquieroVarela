@@ -17,15 +17,15 @@ public class TestCine {
         
         Scanner scanner = new Scanner(System.in);
         String titulo;
-        int opcion;
+        int opcion, hora;
         
         //ArrayList <Pelicula> peliculas = new ArrayList();
-        Cine cine = new Cine("Love", 9, 10);
-         
+        Cine cine = new Cine("Cinepolis", 9, 22);
+        
         do{
             System.out.println("Ingrese el titulo de la pelicula:");
             scanner.nextLine();
-            titulo=scanner.nextLine();
+            titulo = scanner.nextLine();
             Pelicula nuevaPeli = new Pelicula(titulo);
             //peliculas.add(nueva);
             cine.agregarPelicula(nuevaPeli);
@@ -33,7 +33,10 @@ public class TestCine {
             opcion = scanner.nextInt();
         }while(opcion==1);
         
-        //Cine cine = new Cine("Love", 9, 11, peliculas);
-        System.out.println(cine.imprimirPeliculas());
+        System.out.println(cine.numPeliculas());
+        System.out.println(cine.menuPeliculas());
+        System.out.println("Ingrese a la hora para saber si esta abierto el cine: ");
+        hora = scanner.nextInt();
+        cine.horaCine(hora);
     }
 }
