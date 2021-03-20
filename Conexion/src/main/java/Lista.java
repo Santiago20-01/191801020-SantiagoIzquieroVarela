@@ -1,6 +1,10 @@
 
-import java.sql.*;
+
+import Conexion.Conexion;
 import java.sql.SQLException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -12,13 +16,12 @@ import java.sql.SQLException;
  *
  * @author ramse
  */
-public class Conexion {
-    public static void main(String[] args) {
-        String url = "jdbc:mysql://127.0.0.1:3306/usuarios_fotos?zeroDateTimeBehavior=CONVERT_TO_NULL";
-        try{
+public class Lista {
+    public static void main(String[] args) throws SQLException {
+        
             // Crear conexion con base de datos         
-            Connection conexion = DriverManager.getConnection(url, "root", "");
-            
+            // conexion = DriverManager.getConnection(url, "root", "");
+            Connection conexion = Conexion.getConexion();
             // Crear una declaracion de como se travajara con la base de datos.
             Statement declaracion = conexion.createStatement();
             String SQL = "SELECT * FROM usuarios"; 
@@ -34,14 +37,7 @@ public class Conexion {
                 System.out.println(resultado.getString("nombre_foto"));
                 System.out.println(resultado.getString("formato"));
             }
-            
-            // Crear toda la conexion con la base de datos
-            resultado.close();
-            declaracion.close();
-            conexion.close();
-            
-        }catch(SQLException ex){
-            ex.printStackTrace(System.out);
-        }
+            Conexion.close(conexion, declaracion, resultado);
+            // Crear toda la conexion con la base de datos 
     }
 }

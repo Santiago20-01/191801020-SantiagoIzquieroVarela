@@ -1,12 +1,7 @@
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Scanner;
-
+import Conexion.Conexion;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -22,8 +17,8 @@ public class Insertar {
         String url = "jdbc:mysql://localhost:3306/usuarios?zeroDateTimeBehavior=CONVERT_TO_NULL";
         try{
             // Crear conexion con base de datos         
-            Connection conexion = DriverManager.getConnection(url, "root", "");
-            
+            //Connection conexion = DriverManager.getConnection(url, "root", "");
+            Connection conexion = Conexion.getConexion();
             // Crear una declaracion de como se travajara con la base de datos.
             //PreparedStatement declaracion = conexion.createStatement();
             String SQL = "INSERT INTO usuarios(nombre_usuario, contraseña, status)VALUES(?,?,?)"; 

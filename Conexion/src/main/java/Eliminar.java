@@ -4,6 +4,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
+import Conexion.Conexion;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -20,8 +21,8 @@ public class Eliminar {
         String url = "jdbc:mysql://localhost:3306/usuarios?zeroDateTimeBehavior=CONVERT_TO_NULL";
         try{
             // Crear conexion con base de datos         
-            Connection conexion = DriverManager.getConnection(url, "root", "");
-            
+            //Connection conexion = DriverManager.getConnection(url, "root", "");
+            Connection conexion = Conexion.getConnection;
             // Crear una declaracion de como se travajara con la base de datos.
             //PreparedStatement declaracion = conexion.createStatement();
             String SQL = "DELETE FROM usuarios WHERE id = ?"; 
