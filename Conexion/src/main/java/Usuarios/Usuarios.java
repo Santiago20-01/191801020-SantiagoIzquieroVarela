@@ -26,6 +26,25 @@ public class Usuarios {
         this.id = id;
         this.status = status;
     }
+    
+    public Usuarios(String nombre, String contraseña) {
+        this.nombre = nombre;
+        this.contraseña = contraseña;
+    }
+    
+    public Usuarios(int id) {
+        this.id = id;
+    }
+    
+    public Usuarios(int id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+    }
+    
+    public Usuarios(String contraseña, int id) {
+        this.contraseña = contraseña;
+        this.id = id;
+    }
 
     public String getNombre() {
         return nombre;
@@ -69,7 +88,10 @@ public class Usuarios {
 
     @Override
     public String toString() {
-        return "usuarios{" + "nombre=" + nombre + ", contrase\u00f1a=" + contraseña + ", fechaDeAlta=" + fechaDeAlta + ", id=" + id + ", status=" + status + '}';
+        return nombre;
     }
     
+    public String imprimir() {
+        return "usuarios{" + "nombre=" + nombre + ", contrase\u00f1a=" + contraseña + ", fechaDeAlta=" + fechaDeAlta + ", id=" + id + ", status=" + status + '}';
+    }
 }

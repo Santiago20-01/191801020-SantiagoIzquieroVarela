@@ -1,10 +1,8 @@
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Scanner;
-import Conexion.Conexion;
+import DaoUsuarios.DaoUsuarios;
+import Usuarios.Usuarios;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,12 +15,43 @@ import Conexion.Conexion;
  * @author ramse
  */
 public class Actualizar {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
+        
+        Scanner scanner = new Scanner(System.in);
+        int opcion;
+        do{
+            System.out.println("1- Cambiar nombre de usuario");
+            System.out.println("2- Cambiar contraseña");
+            System.out.println("\tOpcion:");
+            opcion = scanner.nextInt();
+        }while(opcion < 1 && opcion > 2);
+        
+        if(opcion == 1){
+            
+            System.out.println("Ingrese el ID:");
+            int id = scanner.nextInt();
+            System.out.println("Ingrese el nombre:");
+            scanner.nextLine();
+            String nombreUsuario = scanner.nextLine();
+            Usuarios usuario = new Usuarios(id, nombreUsuario);
+            DaoUsuarios.actualizar(usuario, opcion);
+        }
+        else if(opcion == 2){
+            
+            System.out.println("Ingrese el ID:");
+            int id = scanner.nextInt();
+            System.out.println("Ingrese la contraseña:");
+            scanner.nextLine();
+            String contraseña = scanner.nextLine();
+            Usuarios usuario = new Usuarios(contraseña, id);
+            DaoUsuarios.actualizar(usuario, opcion);
+        }
+        /*
         String url = "jdbc:mysql://localhost:3306/usuarios?zeroDateTimeBehavior=CONVERT_TO_NULL";
         try{
             // Crear conexion con base de datos         
             //Connection conexion = DriverManager.getConnection(url, "root", "");
-            Connection conexion = Conexion.getConnection;
+            Connection conexion = Conexion.getConexion();
             Scanner scanner = new Scanner(System.in);
             System.out.println("Elija el numero del atrivuto");
             System.out.println("1- nombre_usuario");
@@ -74,6 +103,6 @@ public class Actualizar {
             
         }catch(SQLException ex){
             ex.printStackTrace(System.out);
-        }
+        }*/
     }
 }

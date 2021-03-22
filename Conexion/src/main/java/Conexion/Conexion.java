@@ -14,7 +14,7 @@ import java.sql.*;
 public class Conexion {
     //static es una palabra reservada que determina que el atributo es de la clase y no de objeto
     //final es un modificador que indica que el atributo es una constante, no se le podra cambiar e valor de nugun modo.
-    private static final String URL = "jdbc:mysql://127.0.0.1:3306/usuarios_fotos?zeroDateTimeBehavior=CONVERT_TO_NULL";
+    private static final String URL = "jdbc:mysql://127.0.0.1:3306/usuarios?zeroDateTimeBehavior=CONVERT_TO_NULL";
     private static final String USUARIO = "root", PASSWORD = "";
     public static Connection getConnection;
     public static Connection getConexion() throws SQLException{
@@ -33,4 +33,8 @@ public class Conexion {
         resultado.close();
     }
     
+    public static void close(Connection conexion, Statement declaracion) throws SQLException{
+        conexion.close();
+        declaracion.close();
+    }
 }

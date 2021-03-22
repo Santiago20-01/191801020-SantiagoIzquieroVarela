@@ -1,10 +1,10 @@
 
 
-import Conexion.Conexion;
-import java.sql.SQLException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
+import DaoUsuarios.DaoUsuarios;
+import Usuarios.Usuarios;
+import java.util.List;
+import java.util.ArrayList;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,8 +17,15 @@ import java.sql.Statement;
  * @author ramse
  */
 public class Lista {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException{
         
+        List<Usuarios> listaUsuarios = new ArrayList<>();
+        listaUsuarios = DaoUsuarios.listaUsuarios();
+        
+        for(Usuarios usuario:listaUsuarios){
+            System.out.println(usuario);
+        }
+        /*
             // Crear conexion con base de datos         
             // conexion = DriverManager.getConnection(url, "root", "");
             Connection conexion = Conexion.getConexion();
@@ -39,5 +46,6 @@ public class Lista {
             }
             Conexion.close(conexion, declaracion, resultado);
             // Crear toda la conexion con la base de datos 
+*/
     }
 }

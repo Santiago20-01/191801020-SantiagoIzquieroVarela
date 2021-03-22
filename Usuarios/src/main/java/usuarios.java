@@ -25,6 +25,11 @@ public class Usuarios {
         this.status = status;
     }
 
+    public Usuarios(String nombre, String contraseña) {
+        this.nombre = nombre;
+        this.contraseña = contraseña;
+    }
+    
     public String getNombre() {
         return nombre;
     }

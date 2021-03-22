@@ -1,10 +1,8 @@
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Scanner;
-import Conexion.Conexion;
+import DaoUsuarios.DaoUsuarios;
+import Usuarios.Usuarios;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,12 +15,20 @@ import Conexion.Conexion;
  * @author ramse
  */
 public class Eliminar {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
+        
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese la id: ");
+        int id = scanner.nextInt();
+        
+        Usuarios usuario = new Usuarios(id);
+        DaoUsuarios.eliminar(usuario);
+        /*
         String url = "jdbc:mysql://localhost:3306/usuarios?zeroDateTimeBehavior=CONVERT_TO_NULL";
         try{
             // Crear conexion con base de datos         
             //Connection conexion = DriverManager.getConnection(url, "root", "");
-            Connection conexion = Conexion.getConnection;
+            Connection conexion = Conexion.getConexion();
             // Crear una declaracion de como se travajara con la base de datos.
             //PreparedStatement declaracion = conexion.createStatement();
             String SQL = "DELETE FROM usuarios WHERE id = ?"; 
@@ -44,6 +50,6 @@ public class Eliminar {
             
         }catch(SQLException ex){
             ex.printStackTrace(System.out);
-        }
+        }*/
     }
 }

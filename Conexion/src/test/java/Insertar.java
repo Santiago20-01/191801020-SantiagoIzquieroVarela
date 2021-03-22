@@ -1,7 +1,8 @@
 
 import java.sql.*;
 import java.util.Scanner;
-import Conexion.Conexion;
+import DaoUsuarios.DaoUsuarios;
+import Usuarios.Usuarios;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -13,7 +14,18 @@ import Conexion.Conexion;
  * @author ramse
  */
 public class Insertar {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Nombre del usuario: ");
+        String nombreUsuario = scanner.nextLine();
+        System.out.println("Contraseña: ");
+        String contraseña = scanner.nextLine();
+        
+        Usuarios usuario = new Usuarios(nombreUsuario, contraseña);
+        DaoUsuarios.insetar(usuario);
+        
+        System.out.println(usuario);
+        /*
         String url = "jdbc:mysql://localhost:3306/usuarios?zeroDateTimeBehavior=CONVERT_TO_NULL";
         try{
             // Crear conexion con base de datos         
@@ -46,5 +58,6 @@ public class Insertar {
         }catch(SQLException ex){
             ex.printStackTrace(System.out);
         }
+*/
     }
 }
