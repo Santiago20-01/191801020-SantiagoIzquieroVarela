@@ -46,6 +46,10 @@ public class Usuarios {
         this.id = id;
     }
 
+    public Usuarios(Usuarios usuario, String contraseña) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getNombre() {
         return nombre;
     }

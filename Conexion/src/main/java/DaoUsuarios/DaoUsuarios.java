@@ -40,7 +40,7 @@ public class DaoUsuarios {
     public static void insetar(Usuarios usuario) throws SQLException{
         
         Connection conexion = Conexion.getConexion();
-        String SQL = "INSERT INTO usuarios(_usnombreuario, contraseña, status)VALUES(?,?,?)";
+        String SQL = "INSERT INTO usuarios(nombre_usuario, contraseña, status)VALUES(?,?,?)";
         PreparedStatement declaracion = conexion.prepareStatement(SQL);
         
         declaracion.setString(1, usuario.getNombre());
