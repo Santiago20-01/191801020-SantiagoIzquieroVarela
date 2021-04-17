@@ -73,10 +73,12 @@ public class DaoTrabajo {
         Connection conexion = ConexionBase.getConexion();
         
         if(opcion == 1){
-            String SQL = "UPDATE trabajo SET descripcion = ? WHERE id_trabajo = ?";
+            String SQL = "UPDATE trabajo SET descripcion = ?, fecha_inicio = ?, fecha_fin = ? WHERE id_trabajo = ?";
             PreparedStatement declaracion = conexion.prepareStatement(SQL);
             declaracion.setString(1, trabajo.getDescripcion());
-            declaracion.setInt(2, trabajo.getIdTrabajo());
+            declaracion.setString(2, trabajo.getFechaInicio());
+            declaracion.setString(3, trabajo.getFechaFin());
+            declaracion.setInt(4, trabajo.getIdTrabajo());
                 
             declaracion.executeUpdate();
             ConexionBase.close(conexion, declaracion);

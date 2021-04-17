@@ -74,10 +74,12 @@ public class DaoCliente {
         Connection conexion = ConexionBase.getConexion();
         
         if(opcion == 1){
-            String SQL = "UPDATE cliente SET nombre = ? WHERE id_cliente = ?";
+            String SQL = "UPDATE cliente SET nombre = ?, telefono = ?, direccion = ? WHERE id_cliente = ?";
             PreparedStatement declaracion = conexion.prepareStatement(SQL);
             declaracion.setString(1, cliente.getNombre());
-            declaracion.setInt(2, cliente.getIdCliente());
+            declaracion.setString(2, cliente.getTelefono());
+            declaracion.setString(3, cliente.getDireccion());
+            declaracion.setInt(4, cliente.getIdCliente());
                 
             declaracion.executeUpdate();
             ConexionBase.close(conexion, declaracion);

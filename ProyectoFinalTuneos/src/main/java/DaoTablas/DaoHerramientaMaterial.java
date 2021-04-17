@@ -73,10 +73,12 @@ public class DaoHerramientaMaterial {
         Connection conexion = ConexionBase.getConexion();
         
         if(opcion == 1){
-            String SQL = "UPDATE herramienta_material SET nombre = ? WHERE id = ?";
+            String SQL = "UPDATE herramienta_material SET nombre = ?, descripcion = ?, tipo = ? WHERE id = ?";
             PreparedStatement declaracion = conexion.prepareStatement(SQL);
             declaracion.setString(1, herramientaMaterial.getNombre());
-            declaracion.setInt(2, herramientaMaterial.getId());
+            declaracion.setString(2, herramientaMaterial.getDescripcion());
+            declaracion.setInt(3, herramientaMaterial.getTipo());
+            declaracion.setInt(4, herramientaMaterial.getId());
                 
             declaracion.executeUpdate();
             ConexionBase.close(conexion, declaracion);

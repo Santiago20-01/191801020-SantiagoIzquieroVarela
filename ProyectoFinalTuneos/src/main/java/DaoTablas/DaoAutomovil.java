@@ -74,12 +74,13 @@ public class DaoAutomovil {
         Connection conexion = ConexionBase.getConexion();
         
         if(opcion == 1){
-            String SQL = "UPDATE automovil SET marca = ?, modelo = ?, año = ? WHERE id_automovil = ?";
+            String SQL = "UPDATE automovil SET marca = ?, modelo = ?, año = ?, placa = ? WHERE id_automovil = ?";
             PreparedStatement declaracion = conexion.prepareStatement(SQL);
             declaracion.setString(1, automovil.getMarca());
             declaracion.setString(2, automovil.getModelo());
             declaracion.setString(3, automovil.getAño());
-            declaracion.setInt(4, automovil.getIdAutomovil());
+            declaracion.setString(4, automovil.getPlaca());
+            declaracion.setInt(5, automovil.getIdAutomovil());
                 
             declaracion.executeUpdate();
             ConexionBase.close(conexion, declaracion);

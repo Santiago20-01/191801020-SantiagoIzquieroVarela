@@ -77,7 +77,9 @@ public class Usuario {
 
     @Override
     public String toString() {
+        return nombre +"|"+ contraseña +"|"+ fechaAlta +"|"+ idUsuario ;
+    }
+    public String imprimir() {
         return "Usuario{" + "nombre=" + nombre + ", contrase\u00f1a=" + contraseña + ", fechaAlta=" + fechaAlta + ", idUsuario=" + idUsuario + '}';
     }
-    
 }

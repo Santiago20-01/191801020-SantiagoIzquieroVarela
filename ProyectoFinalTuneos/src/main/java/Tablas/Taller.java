@@ -69,7 +69,10 @@ public class Taller {
 
     @Override
     public String toString() {
+        return idTaller +"|" + "|" + nombre + "|" + direccion;
+    }
+    
+    public String imprimir() {
         return "Taller{" + "nombre=" + nombre + ", direccion=" + direccion + ", idTaller=" + idTaller + '}';
     }
-  
 }

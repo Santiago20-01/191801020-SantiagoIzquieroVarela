@@ -80,7 +80,10 @@ public class Trabajo {
 
     @Override
     public String toString() {
-        return "Trabajo{" + "descripcion=" + descripcion + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ", idTrabajo=" + idTrabajo + '}';
+        return idTrabajo + "|" + descripcion + "|" + fechaInicio + "|" + fechaFin;
     }
     
+    public String imprimir() {
+        return "Trabajo{" + "descripcion=" + descripcion + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ", idTrabajo=" + idTrabajo + '}';
+    }
 }

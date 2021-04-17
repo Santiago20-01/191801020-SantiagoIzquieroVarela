@@ -84,7 +84,9 @@ public class HerramientaMaterial {
 
     @Override
     public String toString() {
+        return id + "|" + nombre + "|" + descripcion + "|" + tipo;
+    }
+    public String imprimir() {
         return "HerramientaMaterial{" + "nombre=" + nombre + ", descripcion=" + descripcion + ", id=" + id + ", tipo=" + tipo + '}';
     }
-    
 }

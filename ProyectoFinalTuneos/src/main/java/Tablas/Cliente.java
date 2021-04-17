@@ -79,7 +79,10 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{" + "nombre=" + nombre + ", telefono=" + telefono + ", direccion=" + direccion + ", idCliente=" + idCliente + '}';
+        return idCliente + "\t|\t" + nombre + "\t|\t" + telefono + "\t|\t" + direccion;
     }
     
+    public String imprimir() {
+        return "Cliente{" + "nombre=" + nombre + ", telefono=" + telefono + ", direccion=" + direccion + ", idCliente=" + idCliente + '}';
+    }
 }

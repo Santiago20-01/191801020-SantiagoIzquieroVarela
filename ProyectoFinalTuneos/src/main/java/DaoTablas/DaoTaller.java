@@ -72,10 +72,11 @@ public class DaoTaller {
         Connection conexion = ConexionBase.getConexion();
         
         if(opcion == 1){
-            String SQL = "UPDATE taller SET nombre = ? WHERE id_taller = ?";
+            String SQL = "UPDATE taller SET nombre = ?, direccion = ? WHERE id_taller = ?";
             PreparedStatement declaracion = conexion.prepareStatement(SQL);
             declaracion.setString(1, taller.getNombre());
-            declaracion.setInt(2, taller.getIdTaller());
+            declaracion.setString(2, taller.getDireccion());
+            declaracion.setInt(3, taller.getIdTaller());
                 
             declaracion.executeUpdate();
             ConexionBase.close(conexion, declaracion);

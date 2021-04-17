@@ -91,7 +91,10 @@ public class Automovil {
 
     @Override
     public String toString() {
-        return "Automovil{" + "marca=" + marca + ", modelo=" + modelo + ", a\u00f1o=" + año + ", placa=" + placa + ", idAutomovil=" + idAutomovil + '}';
+        return idAutomovil + "|" + marca + "|" + modelo + "|" + año + "|" + placa;
     }
     
+    public String imprimir() {
+        return "Automovil{" + "marca=" + marca + ", modelo=" + modelo + ", a\u00f1o=" + año + ", placa=" + placa + ", idAutomovil=" + idAutomovil + '}';
+    }
 }
